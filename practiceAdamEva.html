@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="1.jpg" id="adam-eva" >
+<button type="button" id="adam"  onclick="eat(apple);">Adam</button>
+<button type="button" id="eva"  onclick="eat(apple)">Eva</button>
+<button type="button" id="apple"  onclick="apple.getWeight();">Apple</button>
+
+
+
+<script>
+    let Apple = function () {
+        this.weight = 10;
+
+        this.getWeight = function () {
+            alert('táo còn' + this.weight + 'miếng');
+            return this.weight;
+
+        };
+
+        this.isEmpty = function () {
+            if (this.weight <= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+        this.decrease = function () {
+            if (this.weight > 0) {
+                this.weight -= 1;
+            } else {
+                alert('hết táo');
+            }
+        };
+
+    };
+    let Human = function (name, gender, weight) {
+        this.humanName = name;
+        this.gender = gender;
+        this.weight = weight;
+
+    };
+
+
+
+        this.setGender = function (gender) {
+            this.gender = gender;
+        };
+
+
+        this.checkApple = function (apple) {
+        if (apple.isEmpty()) {
+            return true;
+
+        } else {
+            return false;
+        }
+    };
+
+    this.eat = function (apple) {
+        if (apple.isEmpty()){
+            this.weight++;
+            apple.decrease();
+            alert("da an");
+        }
+    };
+
+        this.getName = function () {
+            return this.humanName;
+        };
+        this.setName = function (newName) {
+            this.humanName = newName;
+        };
+
+        this.getWeight = function () {
+            return this.weight;
+
+        };
+
+        this.setWeight = function (weight) {
+
+            this.weight = weight;
+
+        };
+
+        let person_1 = new Human("Adam", "Male", 70);
+        let person_2 = new Human("Eva", "Female", 50);
+        let apple = new Apple();
+
+
+</script>
+
+
+</body>
+</html>
